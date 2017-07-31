@@ -30,8 +30,8 @@
          "numberOfVersions":0,
          "rating":0,
          "overallScore":0,
-         "modifiedDate":"2017-07-18T11:15:37.5530000-04:00", //Invited
-         "completedDate":null, //Completed
+         "modifiedDate":"2017-07-18T11:15:37.5530000-04:00", 
+         "completedDate":null, 
          "streamHost":"12.41.82.13",
          "streamMaximumLength":3300,
          "submissionsPid":552666578,

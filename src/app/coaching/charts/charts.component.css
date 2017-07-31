@@ -1,0 +1,31 @@
+.char-div{
+    -webkit-box-shadow: 3px 4px 14px -2px rgba(0,0,0, 0.19);
+    -moz-box-shadow: 3px 4px 14px -2px rgba(0,0,0, 0.19);
+    box-shadow: 3px 4px 14px -2px rgba(0, 0, 0, 0.19);
+    border-radius: 8px;
+    padding: 18px 0px;
+}
+
+h2{
+    margin-top: 0px;
+}
+
+.line-right{
+border-right: 1px solid rgba(0, 0, 0, 0.29);
+}
+
+.container-avgScore{
+    border: 1px solid rgba(0, 0, 0, 0.47);
+    border-radius: 15px;
+    padding: 0px 20px;
+}
+.container-avgScore h3{
+    font-size: 1.5rem;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    color: #077edc;
+    font-weight: 100;
+}
+.container-avgScore p{
+    margin-bottom: 0px;
+}

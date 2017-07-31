@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-xs-12">
+    <md-input-container floatPlaceholder="never">
+      <input mdInput #filter placeholder="Filter users">
+    </md-input-container>
+    <div>
+    </div>
+    <div class="col-xs-12 example-container mat-elevation-z8">
+      <table mdSort (mdSortChange)="sortData($event)">
+        <tr >
+          <th  style="width: 400px;" md-sort-header="title">Title</th>
+          <th  md-sort-header="createby">Create By</th>
+          <th  md-sort-header="avgScore">Avg Score</th>
+          <th  style="width: 140px;" md-sort-header="invited">Invited</th>
+          <th  style="width: 125px;" md-sort-header="completed">Completed</th>
+        </tr>
+
+        <tr *ngFor="let challenge of myChallengesResults | paginate: { itemsPerPage: 10, currentPage: currentpage, id: 'myChallenge' }">
+          <td>{{challenge.challengeName}}</td>
+          <td>{{challenge.challengerFirstName}}</td>
+          <td> - </td>
+          <td>{{challenge.modifiedDate | date:'y-MM-dd' || '-' }}</td>
+          <td>{{challenge.completedDate | date:'y-MM-dd' || 'Complete Now'}}</td>
+        </tr>
+      </table>
+      <pagination-controls (pageChange)="currentpage = $event" id="myChallenge"></pagination-controls>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+<md-input-container floatPlaceholder="never">
+  <input mdInput #filter placeholder="Filter users">
+</md-input-container>
+<div>
+ <table mdSort (mdSortChange)="sortData($event)">
+  <tr>
+    <th style="width: 400px;" md-sort-header="title">Title</th>
+    <th md-sort-header="createby">Create By</th>
+    <th md-sort-header="modified">Modified</th>
+    <th style="width: 125px;" md-sort-header="invited">Invented</th>
+    <th style="width: 125px;" md-sort-header="entries">Entries</th>
+    <th style="width: 125px;" md-sort-header="toreview">To review</th>
+    <th style="width: 125px;" md-sort-header="actions">Actions</th>
+  </tr>
+  <tr  *ngFor="let challenges of teamChallengesResults | paginate: { itemsPerPage: 10, currentPage: currentpage, id: 'teamChallenge' }">
+    <td>{{challenges.name}}</td>
+    <td>{{challenges.userFullName}}</td>
+    <td>{{challenges.modifiedDate | date:'y-MM-dd'}}</td>
+    <td>{{challenges.numberInvited || '-' }}</td>
+    <td>{{challenges.numberOfEntries || '-'}}</td>
+    <td><span [ngClass]="{'pedingReviews': challenges.numberToReview > 0 }">{{challenges.numberToReview || '-'}}</span></td>
+    <td>
+      <button md-icon-button [mdMenuTriggerFor]="menu">
+        <md-icon>more_vert</md-icon>
+      </button>
+      <md-menu #menu="mdMenu" yPosition="above" xPosition="before" [overlapTrigger]="false">
+        <button md-menu-item>
+          <md-icon>dialpad</md-icon>
+          <span>Redial</span>
+        </button>
+        <button md-menu-item>
+          <md-icon>dialpad</md-icon>
+          <span>Redial</span>
+        </button>
+        <button md-menu-item>
+          <md-icon>dialpad</md-icon>
+          <span>Redial</span>
+        </button>
+        <button md-menu-item>
+          <md-icon>dialpad</md-icon>
+          <span>Redial</span>
+        </button>
+        <button md-menu-item disabled>
+          <md-icon>voicemail</md-icon>
+          <span>Check voicemail</span>
+        </button>
+        <button md-menu-item>
+          <md-icon>notifications_off</md-icon>
+          <span>Disable alerts</span>
+        </button>
+      </md-menu>
+    </td>
+  </tr>
+</table>
+<pagination-controls (pageChange)="currentpage = $event" id="teamChallenge"></pagination-controls>
+</div> 

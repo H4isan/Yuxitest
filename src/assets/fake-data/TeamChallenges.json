@@ -16,9 +16,9 @@
                "challengeId":51022
             }
          ],
-         "numberInvited":1, // Number of people invited to present
-         "numberOfEntries":0, // Submissions
-         "numberToReview":0, // Submissions pending to review
+         "numberInvited":1, 
+         "numberOfEntries":0, 
+         "numberToReview":0, 
          "numberReviewed":0, 
          "enableMultipleRatingCategories":false,
          "folderId":446473,
