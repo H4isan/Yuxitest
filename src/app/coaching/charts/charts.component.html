@@ -13,8 +13,10 @@
     </div>
   </div>
 <div class="col-xs-12 col-md-5 col-sm-5">
-  <div style="display: block">
-    <canvas baseChart [datasets]="datasets" [labels]="doughnutChartLabels" [colors]="lineChartColors" [chartType]="doughnutChartType" (chartHover)="chartHovered($event)"
+  <div class="container-chart">
+      <div *ngIf="arrayChallenge.typeChart" class="chart-centertitle">{{arrayChallenge.val1}} Entries to review</div>
+      <div *ngIf="!arrayChallenge.typeChart" class="chart-centertitle">{{arrayChallenge.val1}} Challenges to Complete</div>
+    <canvas baseChart [datasets]="datasets" [labels]="doughnutChartLabels" [options]="barChartOptions" [colors]="lineChartColors" [chartType]="doughnutChartType" (chartHover)="chartHovered($event)"
       (chartClick)="chartClicked($event)"></canvas>
   </div>
 </div>

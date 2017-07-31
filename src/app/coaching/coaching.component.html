@@ -1,7 +1,7 @@
 <script src="node_modules/chart.js/src/chart.js"></script>
 
 <p>
-  coaching works!
+  Challenge Dashboard
 </p>
 <div class="row container-chart">
   <div *ngIf="challengeChart" class="col-xs-12 col-md-6 col-sm-6">
@@ -11,15 +11,23 @@
     <app-charts [arrayChallenge]="challengeChart2"> </app-charts>
   </div>
 </div>
-<md-tab-group (selectChange)="handleUserUpdated($event)">
-  <md-tab label="Team Challenges">
-    <div *ngIf="challengeResult">
-      <app-table [arrayChallenge]="challengeResult" > </app-table>
-    </div>
-  </md-tab>
-  <md-tab label="My Challenges">
-    <div *ngIf="challengeResult2">
-    <app-table-mychallenges [arrayChallenge]="challengeResult2" > </app-table-mychallenges>
-    </div>
-  </md-tab>
-</md-tab-group>
+<div class="dashboard-container" >
+  <div class="dashboard-info">
+  
+    <p>To be Complete <span class="pedingReviews border-round">{{challengeChart2?.val1}}</span> </p>
+    <button md-raised-button class="btn-blue">New Challenge</button>
+  </div>
+  
+  <md-tab-group>
+    <md-tab label="Team Challenges">
+      <div *ngIf="challengeResult">
+        <app-table [arrayChallenge]="challengeResult" > </app-table>
+      </div>
+    </md-tab>
+    <md-tab label="My Challenges">
+      <div *ngIf="challengeResult2">
+        <app-table-mychallenges [arrayChallenge]="challengeResult2" > </app-table-mychallenges>
+      </div>
+    </md-tab>
+  </md-tab-group>
+</div>

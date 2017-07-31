@@ -1,8 +1,9 @@
 <md-input-container floatPlaceholder="never">
   <input mdInput #filter placeholder="Filter users">
+  <md-icon mdSuffix>mode_edit</md-icon>
 </md-input-container>
 <div>
- <table mdSort (mdSortChange)="sortData($event)">
+ <table mdSort (mdSortChange)="sortData($event)" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <th style="width: 400px;" md-sort-header="title">Title</th>
     <th md-sort-header="createby">Create By</th>
@@ -13,7 +14,7 @@
     <th style="width: 125px;" md-sort-header="actions">Actions</th>
   </tr>
   <tr  *ngFor="let challenges of teamChallengesResults | paginate: { itemsPerPage: 10, currentPage: currentpage, id: 'teamChallenge' }">
-    <td>{{challenges.name}}</td>
+    <td class="text-blue" >{{challenges.name}}</td>
     <td>{{challenges.userFullName}}</td>
     <td>{{challenges.modifiedDate | date:'y-MM-dd'}}</td>
     <td>{{challenges.numberInvited || '-' }}</td>
@@ -21,7 +22,7 @@
     <td><span [ngClass]="{'pedingReviews': challenges.numberToReview > 0 }">{{challenges.numberToReview || '-'}}</span></td>
     <td>
       <button md-icon-button [mdMenuTriggerFor]="menu">
-        <md-icon>more_vert</md-icon>
+        <md-icon>more_horiz</md-icon>
       </button>
       <md-menu #menu="mdMenu" yPosition="above" xPosition="before" [overlapTrigger]="false">
         <button md-menu-item>
@@ -52,5 +53,20 @@
     </td>
   </tr>
 </table>
-<pagination-controls (pageChange)="currentpage = $event" id="teamChallenge"></pagination-controls>
+  <div class="row between-lg">
+    <div class="col-xs-12
+                col-sm-6
+                col-md-6
+                col-lg-4">
+      <p>
+        Showing {{currentpage}} to 10 of {{teamChallengesResults.length}} entries
+      </p>
+    </div>
+    <div class="col-xs-12
+                col-sm-6
+                col-md-6
+                col-lg-4"> 
+    <pagination-controls (pageChange)="currentpage = $event" id="teamChallenge"></pagination-controls>
+    </div>
+  </div>
 </div> 

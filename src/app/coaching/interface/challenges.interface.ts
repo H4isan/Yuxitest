@@ -1,4 +1,4 @@
-export interface Challenges {
+export class Challenges {
     success: true;
     count: number;
     results: any[];

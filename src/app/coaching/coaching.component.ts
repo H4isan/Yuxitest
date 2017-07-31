@@ -16,16 +16,11 @@ export class CoachingComponent implements OnInit {
   challengeChart;
   challengeChart2;
   challengeResult2;
-  columnTitle;
-  @Output() selectChange;
   constructor(private http: Http, private challangerService: ChallangerService) { }
 
   ngOnInit() {
-    this.columnTitle = ['Title', 'Create By', 'Modified', 'Invented', 'Entries', 'To review', 'Actions'];
     this.challangerService.getTeamChallenger().subscribe((data: any) => {
       const dataResult = data.results;
-
-      // tslint:disable-next-line:max-line-length
       this.challengeChart = {
         val1 : Object.keys(dataResult).reduce((sum, key) => sum + dataResult[key].numberToReview, 0),
         val2 : Object.keys(dataResult).reduce((sum, key) => sum + dataResult[key].numberOfEntries, 0),
@@ -35,15 +30,9 @@ export class CoachingComponent implements OnInit {
     this.getmyChallengesData();
 
   }
-  handleUserUpdated(s) {
-    if (s.index === 1) {
-
-    }else {
-
-    }
-  }
   getmyChallengesData(): void {
-      this.challangerService.getMyChallenger().subscribe((data: any) => {
+      this.challangerService.getMyChallenger()
+      .subscribe((data: any) => {
         const dataResult = data.results;
         this.challengeResult2 = dataResult;
         const lenghtChallenges = data.results.length;
@@ -53,9 +42,9 @@ export class CoachingComponent implements OnInit {
             countCompletedDates = element.completedDate ? countCompletedDates + 1 : countCompletedDates ;
             avgScore = avgScore + element.overallScore;
         });
-        const falta = lenghtChallenges - countCompletedDates;
+        const countTocomplete = lenghtChallenges - countCompletedDates;
         const AvgScore = avgScore / lenghtChallenges;
-        this.challengeChart2 = { val1: countCompletedDates, val2: falta, typeChart: false , avgScore : AvgScore };
+        this.challengeChart2 = { val1: countTocomplete, val2: countCompletedDates, typeChart: false , avgScore : AvgScore };
       });
   }
 }

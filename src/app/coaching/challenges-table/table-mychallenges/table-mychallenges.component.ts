@@ -30,6 +30,7 @@ export class TableMychallengesComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
     this._dataMyChallenges
       .subscribe((dataChallenges: any) => {
         this.temp = [...dataChallenges];
@@ -50,6 +51,7 @@ export class TableMychallengesComponent implements OnInit {
           this.myChallengesResults = this.temp;
         }
       });
+
   }
   sortData(sort: Sort) {
     const data = this.arrayChallenge.slice();
