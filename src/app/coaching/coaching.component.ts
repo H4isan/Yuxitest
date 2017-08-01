@@ -21,9 +21,12 @@ export class CoachingComponent implements OnInit {
   ngOnInit() {
     this.challangerService.getTeamChallenger().subscribe((data: any) => {
       const dataResult = data.results;
+      let totalnumberEntries = Object.keys(dataResult).reduce((sum, key) => sum + dataResult[key].numberOfEntries, 0);
+      const totalreviewed =  Object.keys(dataResult).reduce((sum, key) => sum + dataResult[key].numberToReview, 0) -  Object.keys(dataResult).reduce((sum, key) => sum + dataResult[key].numberReviewed, 0);
+      totalnumberEntries = totalnumberEntries - totalreviewed;
       this.challengeChart = {
-        val1 : Object.keys(dataResult).reduce((sum, key) => sum + dataResult[key].numberToReview, 0),
-        val2 : Object.keys(dataResult).reduce((sum, key) => sum + dataResult[key].numberOfEntries, 0),
+        val1 : totalreviewed,
+        val2 : totalnumberEntries,
         typeChart: true};
       this.challengeResult = dataResult;
     });
