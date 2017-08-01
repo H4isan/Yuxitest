@@ -1,6 +1,6 @@
 <md-input-container floatPlaceholder="never">
   <input mdInput #filter placeholder="Filter users">
-  <md-icon mdSuffix>mode_edit</md-icon>
+  <md-icon mdSuffix>search</md-icon>
 </md-input-container>
 <div>
  <table mdSort (mdSortChange)="sortData($event)" border="0" cellspacing="0" cellpadding="0">
@@ -21,7 +21,7 @@
     <td>{{challenges.numberOfEntries || '-'}}</td>
     <td><span [ngClass]="{'pedingReviews': challenges.numberToReview > 0 }">{{challenges.numberToReview || '-'}}</span></td>
     <td>
-      <button md-icon-button [mdMenuTriggerFor]="menu">
+      <button md-icon-button [mdMenuTriggerFor]="menu" class="menu-icon" >
         <md-icon>more_horiz</md-icon>
       </button>
       <md-menu #menu="mdMenu" yPosition="above" xPosition="before" [overlapTrigger]="false">

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { Challenges } from './interface/Challenges.interface';
+import { Challenges } from './../interface/Challenges.interface';
 @Injectable()
 export class ChallangerService {
   private headers = new Headers({'Content-Type': 'application/json'});
