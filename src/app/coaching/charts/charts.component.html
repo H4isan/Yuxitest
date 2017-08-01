@@ -1,18 +1,18 @@
 
 <div class="row between-sm char-div" style="width: 100%">
-<div *ngIf="arrayChallenge.typeChart" class="col-xs-12 col-md-6 col-sm-6 line-right">
+<div *ngIf="arrayChallenge.typeChart" class="col-xs-12 col-md-4 col-sm-4 line-right">
   <h2>Welcome Jam</h2>
   <p class="text-blue">It looks like you have some entries to review</p>
   <h4>Browse your Team Challenges tab below to continue reviewing submisions, or your My Challenges tab to complete challenges</h4>
 </div>
-<div *ngIf="!arrayChallenge.typeChart" class="col-xs-12 col-md-6 col-sm-6 line-right">
+<div *ngIf="!arrayChallenge.typeChart" class="col-xs-12 col-md-4 col-sm-4 line-right">
   <h2>Personal Status</h2>
     <div class="container-avgScore">
       <p>Avg Score</p>
       <h3>{{arrayChallenge.avgScore | number : '1.2-2'}}%</h3>
     </div>
   </div>
-<div class="col-xs-12 col-md-5 col-sm-5">
+<div class="col-xs-12 col-md-7 col-sm-7">
   <div class="container-chart">
       <div *ngIf="arrayChallenge.typeChart" class="chart-centertitle">{{arrayChallenge.val1}} Entries to review</div>
       <div *ngIf="!arrayChallenge.typeChart" class="chart-centertitle">{{arrayChallenge.val1}} Challenges to Complete</div>

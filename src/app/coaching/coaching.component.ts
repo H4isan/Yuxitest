@@ -43,7 +43,7 @@ export class CoachingComponent implements OnInit {
             avgScore = avgScore + element.overallScore;
         });
         const countTocomplete = lenghtChallenges - countCompletedDates;
-        const AvgScore = avgScore / lenghtChallenges;
+        const AvgScore = avgScore / countCompletedDates;
         this.challengeChart2 = { val1: countTocomplete, val2: countCompletedDates, typeChart: false , avgScore : AvgScore };
       });
   }

@@ -1,8 +1,11 @@
-<md-input-container floatPlaceholder="never">
-  <input mdInput #filter placeholder="Filter users">
-  <md-icon mdSuffix>search</md-icon>
-</md-input-container>
-
+<div class="row end-lg end-sm end-md">
+  <div class="col-xs-12 col-lg-6 col-sm-6 col-md-6">
+    <md-input-container floatPlaceholder="never">
+      <input mdInput #filter placeholder="Filter users">
+      <md-icon mdSuffix>search</md-icon>
+    </md-input-container>
+  </div>
+</div>
 <div>
   <table mdSort (mdSortChange)="sortData($event)" border="0" cellspacing="0" cellpadding="0">
     <tr>
