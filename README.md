@@ -1,5 +1,14 @@
 # Yuxi Global - Angular Test
 
+
+## Dependecies
+  Angular Material --> used for table &  inputs 
+  Ng2chart --> for show doughnut charts
+  ngular-in-memory-web-api --> simualte a local api
+  NgxPagination --> used for genrate pagination in tables. 
+
+for customize the view like the mock was with css 
+  
 ## 1. Introduction
 
 In this test you will be asked to build a set of functionalities in Angular. You will be provided a set of **mockups** and a **base project** we have already setup for you in this repository. 
