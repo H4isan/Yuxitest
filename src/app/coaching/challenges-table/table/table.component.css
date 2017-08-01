@@ -1,0 +1,9 @@
+.row{
+    width: 100%;
+}
+
+.menu-icon{
+    border: 1px solid #077edc !important;
+    border-radius: 10px !important;
+    color: #077edc;
+}

@@ -9,7 +9,7 @@ import { TableMychallengesComponent } from './challenges-table/table-mychallenge
 
 import { ChartsModule } from 'ng2-charts';
 import { ChartsComponent } from './charts/charts.component';
-import { ChallangerService } from './challanger.service';
+import { ChallangerService } from './service/challanger.service';
 import { MdButtonModule, MdIconModule, MdMenuModule, MdTabsModule, MdInputModule} from '@angular/material';
 // Imports for loading & configuring the in-memory web api
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';

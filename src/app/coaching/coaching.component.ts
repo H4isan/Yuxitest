@@ -2,7 +2,7 @@ import { Component, OnInit, Output } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import 'rxjs/Rx';
 import { Sort } from '@angular/material/typings';
-import {ChallangerService} from './challanger.service';
+import {ChallangerService} from './service/challanger.service';
 import {Challenges} from './interface/challenges.interface';
 @Component({
   selector: 'app-coaching',
